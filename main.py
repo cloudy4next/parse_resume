@@ -1,5 +1,5 @@
 import os
-from Relation_test import test
+from Relation import test
 
 from db.data_to_db import TODatabase
 from tools.utils import content_heads
@@ -34,19 +34,7 @@ if __name__=="__main__":
             dest = shutil.copy(source, destination)
             overf_count += 1
             continue
-        # print("----------------------------------------------------------------")
-        # os.system('clear')
-        
-        # print('list: ', new)
-        # print("----------------------------------------------------------------")
-        
-        # # os.system('clear')
-        
-        # print('list: ', new)
-        # print("----------------------------------------------------------------")
-        
-        # # for i in range()
-        # print(len(new))
+
 
         elif new == 0:
             NaN_count += 1

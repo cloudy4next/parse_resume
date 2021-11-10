@@ -1,8 +1,8 @@
 import fitz
 
-# location = './cv_docs/' +
+# location = './All_docs/' +
 
-doc = fitz.open("./cv_docs/shaji.pdf")
+doc = fitz.open("./All_docs/jahangir.pdf")
 
 def make_text(words):
     """Return textstring output of get_text("words").

@@ -551,37 +551,7 @@ class test():
         for item in raw_list:
             # print(item[2])
             new_dict[item[1]] = new_dict[item[1]] + item[2] + " "
-        # print("new dict-->", new_dict)
-        # exit()
 
-        # list_to_db = [self.filename, '', '', '', '', '', '', '']
-        # _, _, about_li, education_li, skill_li, experience_li, project_li, reference_li = self.content_heads()
-        # if raw_list:
-        #     for key in raw_list:
-        #         if self.find_head_in_list(about_li, key):
-        #             # print('in about')
-        #             list_to_db[1] = raw_list[key]
-        #         elif self.find_head_in_list(education_li, key):
-        #             # print('in education_li')
-        #             list_to_db[2] = raw_list[key]
-        #         elif self.find_head_in_list(skill_li, key):
-        #             # print('in skill_li')
-        #             list_to_db[3] = raw_list[key]
-        #         elif self.find_head_in_list(experience_li, key):
-        #             # print('in experience_li')
-        #             list_to_db[4] = raw_list[key]
-        #         elif self.find_head_in_list(project_li, key):
-        #             # print('in project_li')
-        #             list_to_db[5] = raw_list[key]
-        #         elif self.find_head_in_list(reference_li, key):
-        #             # print('in project_li')
-        #             list_to_db[6] = raw_list[key]
-                
-        #         else:
-        #             # (print(f"head '{key}' doesnot match"))
-        #             list_to_db[7] = list_to_db[7] + raw_list[key]
-            
-        # else:
         flag = 0
         
         return new_dict, flag

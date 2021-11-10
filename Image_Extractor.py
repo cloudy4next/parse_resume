@@ -7,30 +7,21 @@ if not os.path.exists('haarcascade_frontalface_default.xml'):
 else:
     face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')
 
-cv_home_dir = "./cv_docs/"
-temp_dir = "./tmp/"
-save_dir = "./image/"
-icon_dir = "./icons/"
+cv_home_dir = "./All_cv/"
+temp_dir = "./temp/"
+save_dir = "./images/"
+icon_dir = "./icon/"
 
 class ImageExtractor(object):
-    '''
-        While Initializing ImageExtractor 
-        takes the file name.
-    '''
+
     def __init__(self, cv_filename):
         self.filename = cv_filename
         self.image_name = ""
         if not os.path.exists(save_dir):
             os.makedirs(save_dir)
-        # if not os.path.exists(icon_dir):
-        #     os.makedirs(icon_dir)
-        
+ 
     def is_face(self):
-        '''
-            Return if any face in image file. 
-            Polpular harcascade classifier 
-            is used to classify the face.
-        '''
+
         image = temp_dir+self.filename[:-4]+".png"
         try:
             img = cv2.imread(image)
@@ -63,12 +54,6 @@ class ImageExtractor(object):
                                 pix.writePNG(save_dir+self.filename[:-4]+".png")
                                 self.image_name = self.filename[:-4]+".png"
                                 flag = 1
-                                
-                        # else:
-                        #     # icon save
-                        #     if not os.path.exists(icon_dir+"/"+self.filename[:-4]):
-                        #         os.makedirs(icon_dir+"/"+self.filename[:-4])
-                        #     pix.writePNG(icon_dir+self.filename[:-4]+"/"+str(icon_count)+".png")
                         os.remove(temp_dir+self.filename[:-4]+".png")
                         
                     except AssertionError:
@@ -83,11 +68,6 @@ class ImageExtractor(object):
                             if flag != 1:
                                 pix.writePNG(save_dir+self.filename[:-4]+".png")
                                 flag = 1
-                        # else:
-                        #     # save icons
-                        #     if not os.path.exists(icon_dir+"/"+self.filename[:-4]):
-                        #         os.makedirs(icon_dir+"/"+self.filename[:-4])
-                        #     pix.writePNG(icon_dir+self.filename[:-4]+"/"+str(icon_count)+".png")
                             
                         os.remove(temp_dir+self.filename[:-4]+".png")
                         pix1 = None
@@ -98,7 +78,7 @@ class ImageExtractor(object):
 
 
 if __name__ == "__main__":
-    for filename in os.listdir('./cv_docs/'):
+    for filename in os.listdir('./All_cv/'):
         if filename == ".init":
             continue
         image_extractor  = ImageExtractor(filename)
